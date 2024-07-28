@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
-use App\Models\Group;
+use App\Models\ContactGroup;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -11,15 +11,17 @@ class ContactController extends Controller
 {
     public function index()
     {
+        $groups = ContactGroup::all();
         $contacts = Contact::with('group')->get();
         return Inertia::render('Contacts/Index', [
             'contacts' => $contacts,
+            'groups' => $groups,
         ]);
     }
 
     public function create()
     {
-        $groups = Group::all();
+        $groups = ContactGroup::all();
         return Inertia::render('Contacts/Create', [
             'groups' => $groups,
         ]);
@@ -31,7 +33,7 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:contacts,email',
             'phone' => 'required',
-            'group_id' => 'nullable|exists:groups,id',
+            'group_id' => 'nullable|exists:contact_groups,id',
         ]);
 
         $contact = Contact::create($request->all());
@@ -48,7 +50,7 @@ class ContactController extends Controller
 
     public function edit(Contact $contact)
     {
-        $groups = Group::all();
+        $groups = ContactGroup::all();
         return Inertia::render('Contacts/Edit', [
             'contact' => $contact,
             'groups' => $groups,
@@ -61,7 +63,7 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:contacts,email,' . $contact->id,
             'phone' => 'required',
-            'group_id' => 'nullable|exists:groups,id',
+            'group_id' => 'nullable|exists:contact_groups,id',
         ]);
 
         $contact->update($request->all());
