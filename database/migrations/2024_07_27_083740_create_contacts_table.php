@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->foreignId('group_id')->nullable()->constrained('groups')->onDelete('set null');
+            $table->foreignId('group_id')->nullable()->constrained('contact_groups')->onDelete('set null');
             $table->timestamps();
         });
     }

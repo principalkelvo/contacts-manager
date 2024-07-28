@@ -5,7 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\GroupController;
+use App\Http\Controllers\ContactGroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,23 +19,23 @@ use App\Http\Controllers\GroupController;
 */
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
-    Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
-    Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
-    Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
-    Route::get('/contacts/{contact}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
-    Route::put('/contacts/{contact}', [ContactController::class, 'update'])->name('contacts.update');
-    Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->name('contacts.destroy');
 
-    Route::get('/groups', [GroupController::class, 'index'])->name('groups.index');
-    Route::get('/groups/create', [GroupController::class, 'create'])->name('groups.create');
-    Route::post('/groups', [GroupController::class, 'store'])->name('groups.store');
-    Route::get('/groups/{group}', [GroupController::class, 'show'])->name('groups.show');
-    Route::get('/groups/{group}/edit', [GroupController::class, 'edit'])->name('groups.edit');
-    Route::put('/groups/{group}', [GroupController::class, 'update'])->name('groups.update');
-    Route::delete('/groups/{group}', [GroupController::class, 'destroy'])->name('groups.destroy');
-});
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
+Route::get('/contacts/{contact}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
+Route::put('/contacts/{contact}', [ContactController::class, 'update'])->name('contacts.update');
+Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->name('contacts.destroy');
+
+Route::get('/groups', [ContactGroupController::class, 'index'])->name('contact_groups.index');
+Route::get('/groups/create', [ContactGroupController::class, 'create'])->name('contact_groups.create');
+Route::post('/groups', [ContactGroupController::class, 'store'])->name('contact_groups.store');
+Route::get('/groups/{group}', [ContactGroupController::class, 'show'])->name('contact_groups.show');
+Route::get('/groups/{group}/edit', [ContactGroupController::class, 'edit'])->name('contact_groups.edit');
+Route::put('/groups/{group}', [ContactGroupController::class, 'update'])->name('contact_groups.update');
+Route::delete('/groups/{group}', [ContactGroupController::class, 'destroy'])->name('contact_groups.destroy');
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

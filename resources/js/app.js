@@ -12,12 +12,20 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
+        // Remove the data-page attribute before mounting the app
+        const cleanedProps = { ...props };
+        if (cleanedProps.initialPage) {
+            delete cleanedProps.initialPage;
+        }
+        if (cleanedProps.initialComponent) {
+            delete cleanedProps.initialComponent;
+        }
+        if (cleanedProps.resolveComponent) {
+            delete cleanedProps.resolveComponent;
+        }
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
             .mount(el);
-    },
-    progress: {
-        color: '#4B5563',
     },
 });
