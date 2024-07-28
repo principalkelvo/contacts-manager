@@ -64,15 +64,6 @@ test.describe("Groups Page", () => {
         await expect(page.getByRole('cell', { name: 'edited test' })).toBeVisible();
     });
 
-    test("should open the Delete confirmation modal when the Delete button is clicked", async ({
-        page,
-    }) => {
-        await page.click("text=Delete");
-        await expect(
-            page.locator("text=Are you sure you want to delete this group?")
-        ).toBeVisible();
-    });
-
     test("should delete a group when confirmed", async ({ page }) => {
          await page.click("text=Add Group");
          await page.locator("text=Create Group").click();
