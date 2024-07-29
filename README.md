@@ -87,9 +87,11 @@ This project is a simple contact management system built with Laravel and Vue.js
 
 ## Troubleshooting
 
--Database Connection Issues: Double-check your .env configuration.
--Services Not Running: Ensure all required services (database, server) are running before executing commands.
--Migration Errors: Verify your Laravel migration files are correctly configured and run migrations again if necessary:
+- Database Connection Issues: Double-check your .env configuration.
+
+- Services Not Running: Ensure all required services (database, server) are running before executing commands.
+
+- Migration Errors: Verify your Laravel migration files are correctly configured and run migrations again if necessary:
 
 ```sh
 
