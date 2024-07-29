@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
+import { router } from '@inertiajs/vue3'
 
 const props = defineProps({
     group: Object,
@@ -19,7 +19,7 @@ watch(props.group, (newVal) => {
 })
 
 const updateGroup = () => {
-    Inertia.put(`/groups/${props.group.id}`, form.value, {
+    router.put(`/groups/${props.group.id}`, form.value, {
         onSuccess: () => {
             emit('close')
         }

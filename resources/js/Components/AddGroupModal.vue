@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
+import { router } from '@inertiajs/vue3'
 
 const emit = defineEmits(['close'])
 
@@ -9,7 +9,7 @@ const form = ref({
 })
 
 const createGroup = () => {
-    Inertia.post('/groups', form.value, {
+    router.post('/groups', form.value, {
         onSuccess: () => {
             emit('close')
         }

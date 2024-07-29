@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { Head } from '@inertiajs/vue3'
-import { Inertia } from '@inertiajs/inertia'
+import { Head, router } from '@inertiajs/vue3'
 import EditGroupModal from '@/Components/EditGroupModal.vue'
 import AddGroupModal from '@/Components/AddGroupModal.vue'
 
@@ -42,7 +41,7 @@ const closeDeleteModal = () => {
 }
 
 const deleteGroup = () => {
-    Inertia.delete(`/groups/${selectedGroup.value.id}`)
+    router.delete(`/groups/${selectedGroup.value.id}`)
     closeDeleteModal()
 }
 </script>

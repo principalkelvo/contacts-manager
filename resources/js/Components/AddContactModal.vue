@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
+import { router } from '@inertiajs/vue3'
 
 const props = defineProps({
     groups: Array,
@@ -15,7 +15,7 @@ const form = ref({
 })
 
 const createContact = () => {
-    Inertia.post('/contacts', form.value)
+    router.post('/contacts', form.value)
 }
 
 const closeModal = () => {

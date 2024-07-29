@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import {  Head } from '@inertiajs/vue3'
-import { Inertia } from '@inertiajs/inertia'
+import { Head, router } from '@inertiajs/vue3'
 import EditContactModal from '@/Components/EditContactModal.vue';
 import AddContactModal from '@/Components/AddContactModal.vue'
 
@@ -44,7 +43,7 @@ const closeDeleteModal = () => {
 }
 
 const deleteContact = () => {
-    Inertia.delete(`/contacts/${selectedContact.value.id}`)
+    router.delete(`/contacts/${selectedContact.value.id}`)
     closeDeleteModal()
 }
 

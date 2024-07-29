@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
+import { router } from '@inertiajs/vue3'
 
 // Define props and emit
 const props = defineProps({
@@ -30,7 +30,7 @@ watch(props.contact, (newVal) => {
 
 // Function to handle updating contact
 const updateContact = () => {
-    Inertia.put(`/contacts/${props.contact.id}`, form.value)
+    router.put(`/contacts/${props.contact.id}`, form.value)
 }
 
 // Function to close modal and reset form state
