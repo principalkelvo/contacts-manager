@@ -27,25 +27,25 @@ This project is a simple contact management system built with Laravel and Vue.js
    git clone https://github.com/principalkelvo/contacts-manager.git
    cd your-repository
 
-2. **Install PHP Dependencies
+2. **Install PHP Dependencies**
 
     ```sh
 
     composer install
 
-3. **Copy .env File
+3. **Copy .env File**
 
     ```sh
 
     cp .env.example .env
 
-4. **Generate Application Key
+4. **Generate Application Key**
 
     ```sh
 
     php artisan key:generate
 
-5. **Configure Database
+5. **Configure Database**
 
     ```sh
 
@@ -56,13 +56,13 @@ This project is a simple contact management system built with Laravel and Vue.js
     DB_USERNAME=your_database_user
     DB_PASSWORD=your_database_password
 
-6. **Run Migrations
+6. **Run Migrations**
 
     ```sh
 
     php artisan migrate
 
-7. **Start the Laravel Development Server
+7. **Start the Laravel Development Server**
 
     ```sh
 
@@ -70,17 +70,17 @@ This project is a simple contact management system built with Laravel and Vue.js
 
 ## Frontend Setup (Vue.js with Inertia.js)
 
-1. **Install Node.js Dependencies
+1. **Install Node.js Dependencies**
 
    ```sh
    npm install
 
-2. **Compile Assets
+2. **Compile Assets**
 
    ```sh
     npm run dev
 
-3. **Run the Tests
+3. **Run the Tests**
 
      ```sh
      npx playwright test
@@ -99,4 +99,4 @@ This project is a simple contact management system built with Laravel and Vue.js
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details
+This project is licensed under the MIT License.
