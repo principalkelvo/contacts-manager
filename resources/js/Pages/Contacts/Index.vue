@@ -10,8 +10,6 @@ const props = defineProps({
     groups: Array,
 })
 
-console.log('groups 2', props.groups)
-console.log('contacts 2', props.contacts)
 const showModal = ref(false)
 const showAddModal = ref(false)
 const showDeleteModal = ref(false)

@@ -7,7 +7,6 @@ const props = defineProps({
     contact: Object,
     groups: Array,
 })
-console.log("1", props)
 
 const emit = defineEmits(['close'])
 

@@ -5,7 +5,6 @@ import { Inertia } from '@inertiajs/inertia'
 const props = defineProps({
     group: Object,
 })
-console.log("1", props)
 
 const emit = defineEmits(['close'])
 

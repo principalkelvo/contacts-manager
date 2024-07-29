@@ -5,7 +5,6 @@ import { Inertia } from '@inertiajs/inertia'
 const props = defineProps({
     groups: Array,
 })
-console.log('groups 1',props.groups)
 const emit = defineEmits(['close'])
 
 const form = ref({
