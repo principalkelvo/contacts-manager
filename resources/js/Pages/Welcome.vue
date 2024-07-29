@@ -3,12 +3,12 @@
         <div class="bg-white shadow-md rounded-lg p-10">
             <h1 class="text-2xl font-bold mb-6 text-center">Manage Your Contacts and Groups</h1>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8">
-                <a href="/contacts" @click.prevent="navigate('/contacts')" class="w-full md:w-auto">
+                <a href="/contacts"class="w-full md:w-auto">
                     <button class="w-full bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600">
                         Manage Contacts
                     </button>
                 </a>
-                <a href="#" @click.prevent="navigate('/groups')" class="w-full md:w-auto">
+                <a href="/groups" class="w-full md:w-auto">
                     <button class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600">
                         Manage Groups
                     </button>
@@ -19,11 +19,6 @@
 </template>
 
 <script setup>
-import { Inertia } from '@inertiajs/inertia'
-
-const navigate = (route) => {
-    Inertia.get(route)
-}
 </script>
 
 <style></style>
