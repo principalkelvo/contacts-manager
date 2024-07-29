@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { Link, Head } from '@inertiajs/vue3'
+import {  Head } from '@inertiajs/vue3'
 import { Inertia } from '@inertiajs/inertia'
 import EditContactModal from '@/Components/EditContactModal.vue';
 import AddContactModal from '@/Components/AddContactModal.vue'

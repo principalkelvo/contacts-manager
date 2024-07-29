@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { Link, Head } from '@inertiajs/vue3'
+import { Head } from '@inertiajs/vue3'
 import { Inertia } from '@inertiajs/inertia'
 import EditGroupModal from '@/Components/EditGroupModal.vue'
 import AddGroupModal from '@/Components/AddGroupModal.vue'
